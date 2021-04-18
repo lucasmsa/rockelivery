@@ -1,2 +1,10 @@
-- [x]  Implement a Queue-like structure using pure Elixir
-    - [x]  It shall have an Enqueue and Dequeue functionalities, with server and client functions inside the module
+# Rockelivery App 🍔
+---
+- Developed on Rocketseat's Ignite Bootcamp 🔥 
+- The app consists on a delivery application with `User`, `Item` and `Order` entities
+
+## Technologies used 🎿
+ - Phoenix
+ - Guardian
+ - Bypass
+ - Tesla
