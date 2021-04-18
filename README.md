@@ -1,0 +1,2 @@
+- [x]  Implement a Queue-like structure using pure Elixir
+    - [x]  It shall have an Enqueue and Dequeue functionalities, with server and client functions inside the module
