@@ -16,7 +16,7 @@ config :rockelivery, Rockelivery.Repo,
 if System.get_env("GITHUB_ACTIONS") do
   config :rockelivery, Rockelivery.Repo,
     username: "postgres",
-    password: "postgres"
+    password: "rockets"
 end
 
 # We don't run a server during test. If one is required,
