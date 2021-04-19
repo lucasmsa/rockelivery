@@ -1,4 +1,6 @@
 defmodule RockeliveryWeb.ConnCase do
+  alias Ecto.Adapters.SQL.Sandbox
+
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -32,10 +34,10 @@ defmodule RockeliveryWeb.ConnCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Rockelivery.Repo)
+    :ok = Sandbox.checkout(Rockelivery.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Rockelivery.Repo, {:shared, self()})
+      Sandbox.mode(Rockelivery.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

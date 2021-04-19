@@ -10,8 +10,6 @@ defmodule RockeliveryWeb.OrdersController do
       conn
       |> put_status(:created)
       |> render("create.json", order: order)
-    else
-      error -> error
     end
   end
 end

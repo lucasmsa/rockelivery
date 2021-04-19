@@ -2,7 +2,7 @@ defmodule Rockelivery.Factory do
   use ExMachina.Ecto, repo: Rockelivery.Repo
   alias Rockelivery.User
 
-  def user_params_factory() do
+  def user_params_factory do
     %{
       "age" => 30,
       "cep" => "58038290",
@@ -14,7 +14,7 @@ defmodule Rockelivery.Factory do
     }
   end
 
-  def cep_info_factory() do
+  def cep_info_factory do
     %{
       cep: "58038-290",
       logradouro: "Rua Major Ciraulo",
@@ -29,7 +29,7 @@ defmodule Rockelivery.Factory do
     }
   end
 
-  def user_factory() do
+  def user_factory do
     %User{
       age: 30,
       cep: "12345678",

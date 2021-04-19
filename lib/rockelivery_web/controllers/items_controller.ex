@@ -10,8 +10,6 @@ defmodule RockeliveryWeb.ItemsController do
       conn
       |> put_status(:created)
       |> render("create.json", item: item)
-    else
-      error -> error
     end
   end
 
@@ -20,8 +18,6 @@ defmodule RockeliveryWeb.ItemsController do
       conn
       |> put_status(:ok)
       |> render("item.json", item: item)
-    else
-      error -> error
     end
   end
 
@@ -30,8 +26,6 @@ defmodule RockeliveryWeb.ItemsController do
       conn
       |> put_status(:ok)
       |> render("item.json", item: item)
-    else
-      error -> error
     end
   end
 
@@ -40,8 +34,6 @@ defmodule RockeliveryWeb.ItemsController do
       conn
       |> put_status(:no_content)
       |> text("")
-    else
-      error -> error
     end
   end
 end
