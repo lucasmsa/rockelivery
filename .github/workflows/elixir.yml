@@ -53,3 +53,27 @@ jobs:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     - name: Run tests
       run: mix test
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/master' # Only run this job if it is on the main branch
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master # Check out main instead of the latest commit
+          fetch-depth: 0 # Checkout the whole branch
+          
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.8.1
+          
+      - uses: mhanberg/gigalixir-action@v0.4.0
+        with:
+          GIGALIXIR_USERNAME: ${{ secrets.GIGALIXIR_USERNAME }}
+          GIGALIXIR_PASSWORD: ${{ secrets.GIGALIXIR_PASSWORD }}
+          GIGALIXIR_APP: darkgrey-envious-foxterrier
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          MIGRATIONS: false  # defaults to true
