@@ -56,6 +56,7 @@ defmodule Rockelivery.MixProject do
       {:hackney, "~> 1.17.0"},
       {:pbkdf2_elixir, "~> 1.3"},
       {:mox, "~> 1.0", only: :test},
+      {:jason, "~> 1.2"},
       {:ex_machina, "~> 2.7.0"},
       {:plug_cowboy, "~> 2.0"}
     ]
